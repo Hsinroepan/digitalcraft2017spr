@@ -1,0 +1,32 @@
+//import pdf library
+  import processing.pdf.*.;
+  
+ //actual pattern
+void setup(){
+  size (800, 750);
+  beginRecord(PDF, "everything.pdf");
+  smooth();
+  noFill();
+  background(0,0,50);
+}
+
+void draw(){
+    int count = 120;
+    for (int x = 0; x <= width; x += 20) {
+      for (int y = 0; y <= height; y+=20) {
+        strokeWeight(1);
+        stroke(200);
+        fill(0,0,80);
+        float s = map(count, 120, 0, 0, TWO_PI*2);
+        arc(x, y, 17, 17, s, s + PI);
+        count--;
+      }
+    }
+}
+
+void keyPressed() {
+  if (key=='Q') {
+    endRecord();
+    exit();
+  }
+}
