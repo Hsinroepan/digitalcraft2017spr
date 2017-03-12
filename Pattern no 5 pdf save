@@ -1,17 +1,17 @@
-//import pdf library
-  import processing.pdf.*.;
+import processing.pdf.*;
+
   
  //actual pattern
-void setup(){
+ void setup(){
   size (800, 750);
-  beginRecord(PDF, "everything.pdf");
+  beginRecord(PDF, "evrthing.pdf");
   smooth();
   noFill();
   background(0,0,50);
-}
-
-void draw(){
-    int count = 120;
+ }
+    
+    void draw(){
+      int count = 120;
     for (int x = 0; x <= width; x += 20) {
       for (int y = 0; y <= height; y+=20) {
         strokeWeight(1);
@@ -22,11 +22,11 @@ void draw(){
         count--;
       }
     }
-}
-
-void keyPressed() {
-  if (key=='Q') {
-    endRecord();
-    exit();
-  }
-}
+   }
+   
+   void keyPressed(){
+   if (key =='A'){
+   endRecord();
+   exit();
+   }
+   }
